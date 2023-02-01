@@ -319,11 +319,11 @@ resource "local_file" "ip_address" {
 # Route 53 and sub-domain name setup
 
 resource "aws_route53_zone" "domain-name" {
-  name = "barakatoseni.net"
+  name = "omobola4all.me"
 }
 
 resource "aws_route53_zone" "sub-domain-name" {
-  name = "terraform-test.barakatoseni.net"
+  name = "terraform-test.omobola4all.me"
 
   tags = {
     Environment = "sub-domain-name"
@@ -332,7 +332,7 @@ resource "aws_route53_zone" "sub-domain-name" {
 
 resource "aws_route53_record" "record" {
   zone_id = aws_route53_zone.domain-name.zone_id
-  name    = "terraform-test.barakatoseni.net"
+  name    = "terraform-test.omobola4all.me"
   type    = "A"
 
   alias {
